@@ -1,12 +1,26 @@
-### NextJs 15 Starter with ShadCN, TailwindCSS, Prettier Plugin for TailwindCSS, and JavaScript.
+## Preview
+![currency-converter]("./currency-converter.png")
 
-#### Why did I choose these?
+## About
 
-- ShadCN: An amazing component library: [https://ui.shadcn.com](https://ui.shadcn.com)
-- Prettier Plugin for TailwindCSS sorts classes according to an order agreed upon at Tailwind Labs: [https://github.com/tailwindlabs/prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
-- JavaScript, because I don't know TypeScript.
-- The default font is set to Geist Sans in `globals.css` - the current default font in NextJs.
+This currency converter app uses:
+  1. The Exchange Rate API to get currencies.
+  2. FlagCDN to get country flags and display them against their currencies.
+  3. IpAPI to get the geographical location of the user in order to display their local currency on load.
+  (NOTE: Should probably add an alert to inform the users about this).
+  4. ShadCN UI to craft the UI.
+  5. Next-themes for the dark/light/system mode toggle.
 
-> This example uses `pnpm` as the package manager. If you are using a different package manager, first delete the `pnpm-lock.yaml` file before installing node_modules, otherwise it will cause a conflict in your project.
+## How to run
+1. Clone or download the repository
+2. Go to [https://exchangerate-api.com](Exchange Rate API) to sign up for an API key.
+3. In your workspace, create a `.env.local` file and add your API key in the following way:
 
-> [Find me here](https://youtube.com/tsbsankara)
+```
+NEXT_PUBLIC_EXCHANGE_RATE_API_KEY=your_api_key
+```
+
+Substitute `your_api_key` with your actual API key.
+
+4. Run `pnpm install` (depending on your package manager) to install all dependencies.
+5. Run `pnpm dev` to start the development server on `http://localhost:3000`
