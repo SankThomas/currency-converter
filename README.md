@@ -1,5 +1,5 @@
 ## Preview
-![currency-converter]("./currency-converter.png")
+![currency-converter](currency-converter.png)
 
 ## About
 
