@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/themeprovider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,9 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Next15 Starter Template",
+  title: "Currency Converter",
   description:
-    "Next15 Starter Template with JavaScript, ShadCN, TailwindCSS and Prettier Plugin TailwindCSS",
+    "Currency Converter using the ExchangeRate API, Axios, TailwindCSS, ShadCN and NextJs",
 };
 
 export default function RootLayout({ children }) {
@@ -24,7 +26,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disabledTransitionChange
+        >
+          <Toaster />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
